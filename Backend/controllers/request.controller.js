@@ -25,8 +25,10 @@ export const sendRequest=async function(req,res)
     {
         
         let checkRequest=findRequestedFriend.request.filter((obj)=>obj.senderId === new mongoose.Types.ObjectId(senderId))
+
+        console.log(checkRequest)
         
-        if(checkRequest)
+        if(checkRequest.length > 0)
             return res.status(200).json({
             success:true,
             message:"Friend Request Already Sent"})

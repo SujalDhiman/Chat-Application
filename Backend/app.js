@@ -13,4 +13,8 @@ import userRouter from "./routes/user.routes.js"
 app.use('/api/v1/user',userRouter)
 
 
+import sendRequest from "./routes/request.routes.js"
+
+app.use('/api/v1/friend',sendRequest)
+
 export default app

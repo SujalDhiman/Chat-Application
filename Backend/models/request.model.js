@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2"
 
 const friendRequestSchema=new mongoose.Schema({
     userId:{
@@ -15,7 +16,8 @@ const friendRequestSchema=new mongoose.Schema({
                 ref:"User"
             },
             seen:{
-                type:boolean
+                type:Boolean,
+                default:false
             },
             sentAt:{
                 type:Date
@@ -23,5 +25,7 @@ const friendRequestSchema=new mongoose.Schema({
         }
     ]
 })
+
+friendRequestSchema.plugin(mongooseAggregatePaginate)
 
 export const friendRequest=mongoose.model("FriendRequest",friendRequestSchema)

@@ -1,0 +1,7 @@
+.message {
+  background-color: white;
+  border-radius: 10px;
+  padding-inline: 9px;
+  padding-block: 6px;
+  max-width: 200px;
+}
